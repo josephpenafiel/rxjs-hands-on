@@ -1,5 +1,10 @@
-import { Observable } from 'rxjs';
-import { observer } from '../index';
+import { Observable, Observer } from 'rxjs';
+
+const observer: Observer<any> = {
+    next: val => console.log('[next]:', val),
+    error: err => console.error('[error]', err),
+    complete: () => console.info('[completed]')
+};
 
 const interval$ = new Observable<number>(subscriber => {
     let count = 0;

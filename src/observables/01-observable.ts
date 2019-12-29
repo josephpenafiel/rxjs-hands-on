@@ -1,5 +1,10 @@
 import { Observable, Observer } from 'rxjs';
-import { observer } from '../index';
+
+const observer: Observer<any> = {
+    next: val => console.log('[next]:', val),
+    error: err => console.error('[error]', err),
+    complete: () => console.info('[completed]')
+};
 
 // const obs$ = Observable.create(); // not common
 const obs$ = new Observable<string>( subs => {
