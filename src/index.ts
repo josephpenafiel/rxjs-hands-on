@@ -1,3 +1,2 @@
 
-
-console.log('Exploring Rxjs');
+console.log( 'Exploring Rxjs' );
